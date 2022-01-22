@@ -1,0 +1,22 @@
+{
+  "name": "kua-kec-kepahiang",
+  "version": "1.0.0",
+  "description": "Kantor urusan Agama Kecamatan Kepahiang",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezafikkri/KUA-Kec-Kepahiang.git"
+  },
+  "keywords": [
+    "kua"
+  ],
+  "author": "Reza Sariful Fikri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rezafikkri/KUA-Kec-Kepahiang/issues"
+  },
+  "homepage": "https://github.com/rezafikkri/KUA-Kec-Kepahiang#readme"
+}
