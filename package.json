@@ -2,9 +2,10 @@
   "name": "kua-kec-kepahiang",
   "version": "1.0.0",
   "description": "Kantor urusan Agama Kecamatan Kepahiang",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.prod.js",
+    "start-dev": "webpack serve --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/rezafikkri/KUA-Kec-Kepahiang/issues"
   },
-  "homepage": "https://github.com/rezafikkri/KUA-Kec-Kepahiang#readme"
+  "homepage": "https://github.com/rezafikkri/KUA-Kec-Kepahiang#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.5.2",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "bootstrap": "^5.1.3"
+  }
 }
