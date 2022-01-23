@@ -1,4 +1,3 @@
-body {
-    background-color: red;
-    font: arial;
-}
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'font.css';
+@import 'common.css';

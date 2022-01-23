@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'WorkSans Regular';
+    src: url('../font/Work_Sans/static/WorkSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans Medium';
+    src: url('../font/Work_Sans/static/WorkSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans Bold';
+    src: url('../font/Work_Sans/static/WorkSans-Bold.ttf') format('truetype');
+}
