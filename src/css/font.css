@@ -13,6 +13,6 @@
 }
 
 @font-face {
-    font-family: 'WorkSans Bold';
-    src: url('../font/Work_Sans/static/WorkSans-Bold.ttf') format('truetype');
+    font-family: 'WorkSans Semi Bold';
+    src: url('../font/Work_Sans/static/WorkSans-SemiBold.ttf') format('truetype');
 }

@@ -1,7 +1,11 @@
 :root {
-
+    --kua-green: #D4E09B;
 }
 
-body {
-    font-family: 'WorkSans Regular';
+.btn-green {
+    background-color: var(--kua-green);
+}
+
+.btn-green:hover {
+    background-color: #CAD982;
 }

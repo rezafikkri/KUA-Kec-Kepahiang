@@ -1,0 +1,49 @@
+.layanan {
+    background-color: var(--kua-green);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 70vh;
+}
+
+.layanan h1,
+.ringkasan-galeri h1,
+.layanan h3 {
+    font-family: 'WorkSans Medium';
+}
+
+.layanan h5 {
+    font-family: 'WorkSans Regular';
+}
+
+.ringkasan-galeri {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.ringkasan-galeri img {
+    width: 100%;
+}
+
+.ringkasan-galeri .row {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.detail-galeri {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top,rgba(0,0,0,.9) 0%, transparent 100%);
+    opacity: 0;
+    transition: .3s;
+}
+
+.detail-galeri:hover {
+    opacity: 1;
+}
+
+.detail-galeri h5 {
+    color: #fff;
+    font-family: 'WorkSans Regular';    
+}
