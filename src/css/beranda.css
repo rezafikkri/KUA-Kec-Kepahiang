@@ -34,7 +34,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top,rgba(0,0,0,.9) 0%, transparent 100%);
+    background: linear-gradient(to top,rgba(202, 217, 130, .8) 0%, transparent 100%);
     opacity: 0;
     transition: .3s;
 }
@@ -44,6 +44,28 @@
 }
 
 .detail-galeri h5 {
-    color: #fff;
-    font-family: 'WorkSans Regular';    
+    font-family: 'WorkSans Regular'; 
+}
+
+.kode-etik {
+    background-color: #F4F4F4;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.kode-etik .col-6 h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ddd;
+    z-index: 1;
+    font-family: 'WorkSans Semi Bold';
+    font-size: 4rem;
+}
+
+.kode-etik .col-6 h4 {
+    position: relative;
+    z-index: 2;
+    font-family: 'WorkSans Regular'; 
+    padding-left: 10px;
 }
