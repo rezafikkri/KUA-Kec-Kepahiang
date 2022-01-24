@@ -9,3 +9,9 @@
 .btn-green:hover {
     background-color: #CAD982;
 }
+
+footer {
+    font-family: 'WorkSans Regular';
+    background-color: #f1f1f1;
+    color: #aaa;
+}
