@@ -11,7 +11,8 @@
     font-family: 'WorkSans Medium';
 }
 
-.layanan h5 {
+.layanan h5,
+.ringkasan-galeri h5 {
     font-family: 'WorkSans Regular';
 }
 
@@ -30,17 +31,19 @@
     padding-right: 12px;
 }
 
-img + .detail-galeri {
+.detail-galeri {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 38px;
+    top: 0;
     background-color: rgba(212, 224, 155, .9);
     opacity: 0;
     transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-img:hover + .detail-galeri,
 .detail-galeri:hover {
     opacity: 1;
 }

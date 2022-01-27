@@ -15,3 +15,22 @@ footer {
     background-color: #f1f1f1;
     color: #aaa;
 }
+
+header {
+    padding-top: 40px;
+    background-color: var(--kua-green);
+    padding-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'WorkSans Semi Bold';
+}
+
+header h5 {
+    font-family: 'WorkSans Regular';
+}
+
+.dropdown-menu {
+    border-radius: 0;
+    border: 0;
+}

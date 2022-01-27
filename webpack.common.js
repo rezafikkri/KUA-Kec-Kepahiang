@@ -2,10 +2,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: './src/app.js',
+    entry: {
+        app: './src/app.js',
+        galeri: './src/galeri.js'
+    },
     output: {
         path: path.resolve(__dirname, 'public/dist'),
-        filename: 'js/app.bundle.js'
+        filename: 'js/[name].bundle.js'
     },
     module: {
         rules: [
