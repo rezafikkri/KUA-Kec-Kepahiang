@@ -32,10 +32,17 @@ header h5 {
 
 .dropdown-menu {
     border-radius: 0;
-    border: 0;
 }
 
 .dropdown-item.active {
     color: #212529;
-    background-color: var(--kua-green);
+    background-color: #EBF1D0;
+}
+
+.dropdown-item:hover {
+    background-color: #f6f6f6;
+}
+
+.dropdown-item:active {
+    color: #212529;
 }
