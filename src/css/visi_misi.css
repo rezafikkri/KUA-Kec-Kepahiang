@@ -1,0 +1,19 @@
+.visi-misi {
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-top: -30px;
+    min-height: 70vh;
+}
+
+.visi-misi ol li {
+    list-style-type: circle;
+}
+
+.visi-misi {
+    font-family: 'WorkSans Regular';
+}
+
+.visi-misi h5 {
+    color: #ddd;
+}
