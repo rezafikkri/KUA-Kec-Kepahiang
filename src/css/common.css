@@ -46,3 +46,12 @@ header h5 {
 .dropdown-item:active {
     color: #212529;
 }
+
+.visi-misi,
+.sejarah {
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-top: -30px;
+    min-height: 70vh;
+}
