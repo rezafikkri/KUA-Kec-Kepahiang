@@ -4,7 +4,8 @@
   "description": "Kantor urusan Agama Kecamatan Kepahiang",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app"
+    "start-dev": "nodemon app",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
