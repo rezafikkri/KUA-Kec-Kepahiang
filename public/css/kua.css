@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'WorkSans Regular';
+    src: url('/font/Work-Sans/WorkSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans Medium';
+    src: url('/font/Work-Sans/WorkSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans Semi Bold';
+    src: url('/font/Work-Sans/WorkSans-SemiBold.ttf') format('truetype');
+}
+
+/* common */
+:root {
+    --kua-green: #D4E09B;
+}
+
+.btn-green {
+    background-color: var(--kua-green);
+}
+
+.btn-green:hover {
+    background-color: #CAD982;
+}
+
+footer {
+    font-family: 'WorkSans Regular';
+    background-color: #f1f1f1;
+    color: #aaa;
+}
+
+header {
+    padding-top: 40px;
+    background-color: var(--kua-green);
+    padding-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'WorkSans Semi Bold';
+}
+
+header h5 {
+    font-family: 'WorkSans Regular';
+}
+
+.dropdown-menu {
+    border-radius: 0;
+}
+
+.dropdown-item.active {
+    color: #212529;
+    background-color: #EBF1D0;
+}
+
+.dropdown-item:hover {
+    background-color: #f6f6f6;
+}
+
+.dropdown-item:active {
+    color: #212529;
+}
+
+.galeri,
+.visi-misi,
+.sejarah,
+.persyaratan-nikah,
+.struktur-organisasi,
+.standar-pelayanan-minimal {
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-top: -30px;
+    min-height: 70vh;
+}
+
+/* navbar */
+.navbar {
+    font-family: 'WorkSans Regular';
+}
+
+.navbar .navbar-brand,
+.nav-link.active {
+    font-family: 'WorkSans Medium';
+}
+
+.navbar.bg-green {
+    background-color: var(--kua-green);
+}
+
+/* beranda */
+.layanan {
+    background-color: var(--kua-green);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 70vh;
+}
+
+.layanan h1,
+.ringkasan-galeri h1,
+.layanan h3 {
+    font-family: 'WorkSans Medium';
+}
+
+.layanan h5,
+.ringkasan-galeri h5 {
+    font-family: 'WorkSans Regular';
+}
+
+.ringkasan-galeri {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.ringkasan-galeri img {
+    width: 100%;
+    position: relative;
+}
+
+.ringkasan-galeri .row {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.detail-galeri {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(212, 224, 155, .9);
+    opacity: 0;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-galeri:hover {
+    opacity: 1;
+}
+
+.detail-galeri h5 {
+    font-family: 'WorkSans Regular'; 
+}
+
+.kode-etik {
+    background-color: #F4F4F4;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.kode-etik .col-6 h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ddd;
+    z-index: 1;
+    font-family: 'WorkSans Semi Bold';
+    font-size: 4rem;
+}
+
+.kode-etik .col-6 h4 {
+    position: relative;
+    z-index: 2;
+    font-family: 'WorkSans Regular'; 
+    padding-left: 10px;
+}
+
+/* galeri */
+.galeri {
+    margin-top: -40px;
+}
+
+.galeri .galeri-grid {
+    padding-bottom: 40px;
+}
+
+.galeri h1 {
+    font-family: 'WorkSans Semi Bold';
+}
+
+.galeri h5 {
+    font-family: 'WorkSans Regular';
+}
+
+.galeri:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.galeri-sizer,
+.galeri-item {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .galeri-sizer,
+    .galeri-item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .galeri-sizer,
+    .galeri-item {
+        width: 33.333%;
+    }
+}
+
+.galeri-item {
+    float: left;
+    position: relative;
+}
+
+.galeri-item img {
+    display: block;
+    max-width: 100%;
+}
+
+/* visi misi */
+.visi-misi ol li {
+    list-style-type: circle;
+}
+
+.visi-misi {
+    font-family: 'WorkSans Regular';
+}
+
+.visi-misi h5 {
+    color: #757575;
+}
+
+/* struktur organisasi */
+.struktur-organisasi {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.struktur-organisasi img {
+    width: 100%;
+}
+
+/* loading */
+.loading {
+    position: relative;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 5px solid #ddd;
+}
+
+.loading div {
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: var(--kua-green) var(--kua-green) transparent transparent;
+    animation: rotatingLoading .7s linear infinite;
+}
+
+@keyframes rotatingLoading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

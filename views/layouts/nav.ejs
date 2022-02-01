@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-light bg-green">
+    <div class="container-xxl">
+    <a class="navbar-brand" href="/">KUA Kec. Kepahiang</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item"><a class="nav-link <% if (page == 'beranda') { %> active <% } %>" href="/">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link <% if (page == 'galeri') { %> active <% } %>" href="/galeri">Galeri</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle <% if (page == 'sejarah' || page == 'visi-misi' || page == 'struktur-organisasi') { %> active <% } %>" href="#" data-bs-toggle="dropdown">
+                    Profil
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item <% if (page == 'sejarah') { %> active <% } %>" href="/sejarah">Sejarah</a></li>
+                    <li><a class="dropdown-item <% if (page == 'visi-misi') { %> active <% } %>" href="/visi-misi">Visi Misi</a></li>
+                    <li><a class="dropdown-item <% if (page == 'struktur-organisasi') { %> active <% } %>" href="/struktur-organisasi">Struktur Organisasi</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle <% if (page == 'persyaratan-nikah' || page == 'standar-pelayanan-minimal') { %> active <% } %>" href="#" data-bs-toggle="dropdown">
+                    Info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item <% if (page == 'persyaratan-nikah') { %> active <% } %>" href="/persyaratan-nikah">Persyaratan Nikah</a></li>
+                    <li><a class="dropdown-item <% if (page == 'standar-pelayanan-minimal') { %> active <% } %>" href="/standar-pelayanan-minimal">Standar Pelayanan Minimal</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+  </div><!-- container-xxl -->
+</nav>
