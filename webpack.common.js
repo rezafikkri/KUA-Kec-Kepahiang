@@ -3,8 +3,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
-        app: './src/app.js',
-        galeri: './src/galeri.js'
+        app: './src/js/app.js',
+        galeri: './src/js/galeri.js'
     },
     output: {
         path: path.resolve(__dirname, 'public/dist'),

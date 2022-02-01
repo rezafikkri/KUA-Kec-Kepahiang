@@ -4,7 +4,7 @@ import regeneratorRuntime from 'regenerator-runtime';
 import { Collapse } from 'bootstrap';
 
 // assets
-import './font/Work_Sans/OFL.txt';
+import '../font/Work_Sans/OFL.txt';
 
 // css
-import './css/app.css';
+import '../css/app.css';
