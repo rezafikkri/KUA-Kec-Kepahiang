@@ -38,6 +38,7 @@ async function getInstagramImages()
     // get image
     try {
         const response = await axios.get(`https://graph.instagram.com/me/media?fields=caption,media_url&access_token=${accessTokens.access_token}`);
+        console.log(response.data);
         return response.data.data;
     } catch (error) {
         console.log(error);
