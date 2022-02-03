@@ -176,11 +176,13 @@ header h5 {
 .galeri {
     padding: 0px;
     margin-top: -40px;
+    padding-bottom: 40px;
 }
 
 @media (min-width: 768px) {
     .galeri {
         padding: 20px;
+        padding-bottom: 40px;
     }
 }
 
