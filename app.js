@@ -1,28 +1,40 @@
 const express = require('express');
+const secure = require('express-force-https');
 const expressLayouts = require('express-ejs-layouts');
+const {
+    getInstagramImages
+} = require('./utils/galeri');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// gunakan secure to force use https in production
+app.use(secure);
 
 // gunakan ejs
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.use(express.static('public'));
 
+app.get('/', async (req, res) => {
+    const images = await getInstagramImages();
 
-app.get('/', (req, res) => {
     res.render('index', {
         layout: 'layouts/main',
         page: 'beranda',
-        title: 'Kantor Urusan Agama Kecamatan Kepahiang'
+        title: 'Kantor Urusan Agama Kecamatan Kepahiang',
+        images
     });
 });
 
-app.get('/galeri', (req, res) => {
+app.get('/galeri', async (req, res) => {
+    const images = await getInstagramImages();
+
     res.render('galeri', {
         layout: 'layouts/main',
         page: 'galeri',
-        title: 'Galeri - KUA Kec. Kepahiang'
+        title: 'Galeri - KUA Kec. Kepahiang',
+        images
     });
 });
 

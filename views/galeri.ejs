@@ -7,36 +7,16 @@
     </header>
     <div class="container">
     <div class="galeri">
-        <!-- <div class="d-flex justify-content-center mt-5" id="loading"> -->
-        <!--     <div class="loading"><div></div></div> -->
-        <!-- </div> -->
-
         <div class="galeri-grid">
             <div class="galeri-sizer"></div>
-            <div class="galeri-item">
-                <img src="img/img1.jpg" alt="">
-                <div class="detail-galeri position-absolute p-3">
-                    <h5>Pengukuran arah kiblat</h5>
+            <% images.forEach((img) => { %>
+                <div class="galeri-item">
+                    <img src="<%= img.media_url %>" alt="<%= img.caption %>">
+                    <div class="detail-galeri position-absolute p-3">
+                        <h5><%= img.caption %></h5>
+                    </div>
                 </div>
-            </div>
-            <div class="galeri-item">
-                <img src="img/img2.jpg" alt="">
-                <div class="detail-galeri position-absolute p-3">
-                    <h5>Pengukuran arah kiblat</h5>
-                </div>
-            </div>
-            <div class="galeri-item">
-                <img src="img/img3.jpg" alt="">
-                <div class="detail-galeri position-absolute p-3">
-                    <h5>Pengukuran arah kiblat</h5>
-                </div>
-            </div>
-            <div class="galeri-item">
-                <img src="img/img4.jpg" alt="">
-                <div class="detail-galeri position-absolute p-3">
-                    <h5>Pengukuran arah kiblat</h5>
-                </div>
-            </div>
+            <% }); %>
         </div><!-- galeri-grid -->
     </div><!-- galeri -->
     </div><!-- container -->
