@@ -1,13 +1,13 @@
 <main>
     <header>
     <div class="container">
-        <h1 class="mb-0">Galeri</h1>
+        <h1 class="mb-0">Foto</h1>
         <h5 class="mb-4">Dokumentasi kegiatan</h5>
     </div>
     </header>
     <div class="container">
-    <div class="galeri">
-        <div class="galeri-grid">
+    <div class="galeri text-center">
+        <div class="galeri-grid mb-5">
             <div class="galeri-sizer"></div>
             <% images.forEach((img) => { %>
                 <div class="galeri-item">
@@ -18,6 +18,11 @@
                 </div>
             <% }); %>
         </div><!-- galeri-grid -->
+        
+        <div class="btn-loading">
+            <a href="#" class="btn btn-green" data-next-page-url="<%= nextPageUrl %>" id="show-next-images">Lihat Lebih Banyak Foto</a>
+            <div class="loading d-none" id="loading"><div></div></div>
+        </div>
     </div><!-- galeri -->
     </div><!-- container -->
 </main>

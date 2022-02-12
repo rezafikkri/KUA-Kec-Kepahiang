@@ -1,13 +1,13 @@
 const { writeFile, readFile } = require('fs/promises');
 const axios = require('axios');
 
-async function loadOldAccessTokens()
+async function loadOldInstagramAccessTokens()
 {
     const accessTokensOld = await readFile('./writable/instagram_access_tokens.json', { encoding: 'utf8' });
     return JSON.parse(accessTokensOld);
 }
 
-async function refreshAccessTokens(access_token)
+async function refreshInstagramAccessTokens(access_token)
 {
     try {
         const response = await axios.get(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${access_token}`);
@@ -18,9 +18,9 @@ async function refreshAccessTokens(access_token)
     } 
 }
 
-async function getInstagramImages()
+async function getInstagramImages(limit, url)
 {
-    let accessTokens = await loadOldAccessTokens();
+    let accessTokens = await loadOldInstagramAccessTokens();
 
     const currentDateObj = new Date();
     const currentDate = `${currentDateObj.getFullYear()}-${currentDateObj.getMonth()}-${currentDateObj.getDate()}`;
@@ -28,18 +28,22 @@ async function getInstagramImages()
     const expireDate = `${expireDateObj.getFullYear()}-${expireDateObj.getMonth()}-${expireDateObj.getDate()}`;
     // if session expired
     if (currentDate == expireDate) {
-        const accessTokensNew = await refreshAccessTokens(accessTokens.access_token);
+        const accessTokensNew = await refreshInstagramAccessTokens(accessTokens.access_token);
         accessTokensNew.created_at = Date.now();
         // update access tokens
         await writeFile('./writable/instagram_access_tokens.json', JSON.stringify(accessTokensNew));
         accessTokens = accessTokensNew;
     }
+
+    // if empty url
+    if (!url) {
+        url = `https://graph.instagram.com/me/media?fields=caption,media_url&edges=children&access_token=${accessTokens.access_token}&limit=${limit}`;
+    }
     
     // get image
     try {
-        const response = await axios.get(`https://graph.instagram.com/me/media?fields=caption,media_url&access_token=${accessTokens.access_token}`);
-        console.log(response.data);
-        return response.data.data;
+        const response = await axios.get(url);
+        return { images: response.data.data, nextPageUrl: response.data.paging.next };
     } catch (error) {
         console.log(error);
         return false;

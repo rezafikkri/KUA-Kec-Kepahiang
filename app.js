@@ -17,7 +17,7 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
-    const images = await getInstagramImages();
+    const { images } = await getInstagramImages(2);
 
     res.render('index', {
         layout: 'layouts/main',
@@ -27,15 +27,22 @@ app.get('/', async (req, res) => {
     });
 });
 
-app.get('/galeri', async (req, res) => {
-    const images = await getInstagramImages();
+app.get('/foto', async (req, res) => {
+    const { images, nextPageUrl } = await getInstagramImages(5);
 
-    res.render('galeri', {
+    res.render('foto', {
         layout: 'layouts/main',
-        page: 'galeri',
-        title: 'Galeri - KUA Kec. Kepahiang',
-        images
+        page: 'foto',
+        title: 'Foto - KUA Kec. Kepahiang',
+        images,
+        nextPageUrl
     });
+});
+
+app.get('/foto/show-next-images', async (req, res) => {
+    const { images, nextPageUrl } = await getInstagramImages(5, req.query.nextPageUrl);
+
+    res.json({ images, nextPageUrl });
 });
 
 app.get('/sejarah', (req, res) => {

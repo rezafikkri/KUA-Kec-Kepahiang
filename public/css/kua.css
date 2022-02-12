@@ -30,6 +30,10 @@
     background-color: #CAD982;
 }
 
+.btn:focus {
+    box-shadow: none;
+}
+
 footer {
     font-family: 'WorkSans Regular';
     background-color: #f1f1f1;
@@ -77,7 +81,7 @@ header h5 {
     padding: 20px;
     padding-bottom: 40px;
     margin-top: -30px;
-    min-height: 70vh;
+    min-height: 80vh;
 }
 
 /* navbar */
@@ -126,6 +130,24 @@ header h5 {
 .ringkasan-galeri .row {
     padding-left: 12px;
     padding-right: 12px;
+}
+
+.ringkasan-galeri .btn {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .ringkasan-galeri .btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .detail-galeri {
@@ -253,15 +275,16 @@ header h5 {
 }
 
 /* loading */
-.loading {
+.loading div {
     position: relative;
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    border: 5px solid #ddd;
+    border: 5px solid #eaeaea;
 }
 
-.loading div {
+.loading div::after {
+    content: "";
     position: absolute;
     top: -5px;
     bottom: -5px;
@@ -281,4 +304,21 @@ header h5 {
     to {
         transform: rotate(360deg);
     }
+}
+
+.btn-loading {
+    display: inline-block;
+    position: relative;
+}
+
+.btn-loading .loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(252,252,252,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

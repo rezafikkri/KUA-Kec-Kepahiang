@@ -9,7 +9,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item"><a class="nav-link <% if (page == 'beranda') { %> active <% } %>" href="/">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link <% if (page == 'galeri') { %> active <% } %>" href="/galeri">Galeri</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle <% if (page == 'foto' || page == 'video') { %> active <% } %>" href="#" data-bs-toggle="dropdown">
+                    Galeri
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item <% if (page == 'foto') { %> active <% } %>" href="/foto">Foto</a></li>
+                    <li><a class="dropdown-item <% if (page == 'video') { %> active <% } %>" href="/video">Video</a></li>
+                </ul>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle <% if (page == 'sejarah' || page == 'visi-misi' || page == 'struktur-organisasi') { %> active <% } %>" href="#" data-bs-toggle="dropdown">
                     Profil
