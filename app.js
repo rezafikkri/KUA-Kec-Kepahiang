@@ -10,11 +10,11 @@ const port = process.env.PORT || 3000;
 
 // force https in production
 app.use((request, response, next) => {
-    if (process.env.NODE_ENV != 'development' && !request.secure) {
+    if (process.env.NODE_ENV == 'production' && request.headers['x-forwarded-proto'] != 'https') {
        return response.redirect("https://" + request.headers.host + request.url);
     }
 
-    next();
+    return next();
 });
 
 // gunakan ejs
