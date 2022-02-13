@@ -1,0 +1,31 @@
+<main>
+    <header>
+    <div class="container">
+        <h1 class="mb-0">Video</h1>
+        <h5 class="mb-4">Dokumentasi kegiatan dan Informasi</h5>
+    </div>
+    </header>
+    <div class="container">
+    <div class="galeri text-center">
+        <div class="galeri-grid mb-5">
+        <div class="row m-0">
+            <% videos.forEach((video) => { %>
+                <div class="col-12 col-md-6 position-relative p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/<%= video.id.videoId %>" title="YouTube video player" allowfullscreen></iframe>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        </div><!-- galeri-grid -->
+        
+        <div class="btn-loading">
+            <a href="#" class="btn btn-green" data-next-page-token="<%= nextPageToken %>" id="show-next-videos">Lihat Lebih Banyak Video</a>
+            <div class="loading d-none" id="loading"><div></div></div>
+        </div>
+    </div><!-- galeri -->
+    </div><!-- container -->
+</main>
+
+<%- contentFor('js') %>
+<script src="js/video.js"></script>

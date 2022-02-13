@@ -1,15 +1,21 @@
 const express = require('express');
-const secure = require('express-force-https');
 const expressLayouts = require('express-ejs-layouts');
 const {
-    getInstagramImages
+    getInstagramImages,
+    getYoutubeVideos
 } = require('./utils/galeri');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// gunakan secure to force use https in production
-app.use(secure);
+// force https in production
+app.use((request, response, next) => {
+    if (process.env.NODE_ENV != 'development' && !request.secure) {
+       return response.redirect("https://" + request.headers.host + request.url);
+    }
+
+    next();
+});
 
 // gunakan ejs
 app.set('view engine', 'ejs');
@@ -18,12 +24,14 @@ app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
     const { images } = await getInstagramImages(2);
+    const { items: videos } = await getYoutubeVideos(2);
 
     res.render('index', {
         layout: 'layouts/main',
         page: 'beranda',
         title: 'Kantor Urusan Agama Kecamatan Kepahiang',
-        images
+        images,
+        videos
     });
 });
 
@@ -43,6 +51,24 @@ app.get('/foto/show-next-images', async (req, res) => {
     const { images, nextPageUrl } = await getInstagramImages(5, req.query.nextPageUrl);
 
     res.json({ images, nextPageUrl });
+});
+
+app.get('/video', async (req, res) => {
+    const { items: videos, nextPageToken } = await getYoutubeVideos(2);
+
+    res.render('video', {
+        layout: 'layouts/main',
+        page: 'video',
+        title: 'Video - KUA Kec. Kepahiang',
+        videos,
+        nextPageToken
+    });
+});
+
+app.get('/video/show-next-videos', async (req, res) => {
+    const { items: videos, nextPageToken } = await getYoutubeVideos(2, req.query.nextPageToken);
+
+    res.json({ videos, nextPageToken });
 });
 
 app.get('/sejarah', (req, res) => {
