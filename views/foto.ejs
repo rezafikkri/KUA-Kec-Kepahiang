@@ -18,11 +18,15 @@
                 </div>
             <% }); %>
         </div><!-- galeri-grid -->
-        
-        <div class="btn-loading">
-            <a href="#" class="btn btn-green" data-next-page-url="<%= nextPageUrl %>" id="show-next-images">Lihat Lebih Banyak Foto</a>
-            <div class="loading d-none" id="loading"><div></div></div>
-        </div>
+
+        <% if (nextPageUrl) { %>
+            <div class="btn-loading">
+                <a href="#" class="btn btn-green" data-next-page-url="<%= nextPageUrl %>" id="show-next-images">Lihat Lebih Banyak Foto</a>
+                <div class="loading d-none" id="loading"><div></div></div>
+            </div>
+        <% } else { %>
+            <p class="text-muted">Foto sudah habis.</p>
+        <% } %>
     </div><!-- galeri -->
     </div><!-- container -->
 </main>

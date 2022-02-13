@@ -55,7 +55,7 @@ document.querySelector('a#show-next-images').addEventListener('click', async (e)
         // show message
         const messageElement = document.createElement('p');
         messageElement.classList.add('text-muted');
-        messageElement.innerText = 'Gambar sudah habis.';
+        messageElement.innerText = 'Foto sudah habis.';
         e.target.parentElement.parentElement.insertBefore(messageElement, e.target.parentElement);
     }
     

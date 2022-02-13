@@ -36,7 +36,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/foto', async (req, res) => {
-    const { images, nextPageUrl } = await getInstagramImages(5);
+    const { images, nextPageUrl } = await getInstagramImages(50);
 
     res.render('foto', {
         layout: 'layouts/main',
@@ -48,13 +48,13 @@ app.get('/foto', async (req, res) => {
 });
 
 app.get('/foto/show-next-images', async (req, res) => {
-    const { images, nextPageUrl } = await getInstagramImages(5, req.query.nextPageUrl);
+    const { images, nextPageUrl } = await getInstagramImages(50, req.query.nextPageUrl);
 
     res.json({ images, nextPageUrl });
 });
 
 app.get('/video', async (req, res) => {
-    const { items: videos, nextPageToken } = await getYoutubeVideos(2);
+    const { items: videos, nextPageToken } = await getYoutubeVideos(50);
 
     res.render('video', {
         layout: 'layouts/main',
@@ -66,7 +66,7 @@ app.get('/video', async (req, res) => {
 });
 
 app.get('/video/show-next-videos', async (req, res) => {
-    const { items: videos, nextPageToken } = await getYoutubeVideos(2, req.query.nextPageToken);
+    const { items: videos, nextPageToken } = await getYoutubeVideos(50, req.query.nextPageToken);
 
     res.json({ videos, nextPageToken });
 });

@@ -19,10 +19,14 @@
         </div>
         </div><!-- galeri-grid -->
         
-        <div class="btn-loading">
-            <a href="#" class="btn btn-green" data-next-page-token="<%= nextPageToken %>" id="show-next-videos">Lihat Lebih Banyak Video</a>
-            <div class="loading d-none" id="loading"><div></div></div>
-        </div>
+        <% if (nextPageToken) { %>
+            <div class="btn-loading">
+                <a href="#" class="btn btn-green" data-next-page-token="<%= nextPageToken %>" id="show-next-videos">Lihat Lebih Banyak Video</a>
+                <div class="loading d-none" id="loading"><div></div></div>
+            </div>
+        <% } else { %>
+            <p class="text-muted">Video sudah habis.</p>
+        <% } %>
     </div><!-- galeri -->
     </div><!-- container -->
 </main>
