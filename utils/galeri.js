@@ -53,7 +53,7 @@ async function getInstagramImages(limit, url)
 async function getYoutubeVideos(limit, nextPageToken)
 {
     const apiKey = 'AIzaSyD0pmZrG5esc5m85Hv0tECBb_LxxfyjuaI';
-    const channelId = 'UCwpsKm_GkogACbNv_b-XYTw';
+    const channelId = 'UC9n_PTHCTSqjvQk4i7zqBgA';
 
     // if not empty next page token
     let url = `https://www.googleapis.com/youtube/v3/search?part=id&channelId=${channelId}&maxResults=${limit}&order=date&type=video&key=${apiKey}`;
