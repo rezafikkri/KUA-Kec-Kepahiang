@@ -36,7 +36,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/foto', async (req, res) => {
-    const { images, nextPageUrl } = await getInstagramImages(50);
+    const { images, nextPageUrl } = await getInstagramImages(10);
 
     res.render('foto', {
         layout: 'layouts/main',
@@ -48,13 +48,13 @@ app.get('/foto', async (req, res) => {
 });
 
 app.get('/foto/show-next-images', async (req, res) => {
-    const { images, nextPageUrl } = await getInstagramImages(50, req.query.nextPageUrl);
+    const { images, nextPageUrl } = await getInstagramImages(10, req.query.nextPageUrl);
 
     res.json({ images, nextPageUrl });
 });
 
 app.get('/video', async (req, res) => {
-    const { items: videos, nextPageToken } = await getYoutubeVideos(50);
+    const { items: videos, nextPageToken } = await getYoutubeVideos(10);
 
     res.render('video', {
         layout: 'layouts/main',
@@ -66,7 +66,7 @@ app.get('/video', async (req, res) => {
 });
 
 app.get('/video/show-next-videos', async (req, res) => {
-    const { items: videos, nextPageToken } = await getYoutubeVideos(50, req.query.nextPageToken);
+    const { items: videos, nextPageToken } = await getYoutubeVideos(10, req.query.nextPageToken);
 
     res.json({ videos, nextPageToken });
 });
@@ -108,6 +108,30 @@ app.get('/standar-pelayanan-minimal', (req, res) => {
         layout: 'layouts/main',
         page: 'standar-pelayanan-minimal',
         title: 'Standar Pelayanan Minimal - KUA Kec. Kepahiang'
+    });
+});
+
+app.get('/persyaratan-rekomendasi-nikah', (req, res) => {
+    res.render('persyaratan_rekomendasi_nikah', {
+        layout: 'layouts/main',
+        page: 'persyaratan-rekomendasi-nikah',
+        title: 'Persyaratan Rekomendasi Nikah - KUA Kec. Kepahiang'
+    });
+});
+
+app.get('/persyaratan-duplikat-buku-nikah', (req, res) => {
+    res.render('persyaratan_duplikat_buku_nikah', {
+        layout: 'layouts/main',
+        page: 'persyaratan-duplikat-buku-nikah',
+        title: 'Persyaratan Duplikat Buku Nikah - KUA Kec. Kepahiang'
+    });
+});
+
+app.get('/persyaratan-isbat-nikah', (req, res) => {
+    res.render('persyaratan_isbat_nikah', {
+        layout: 'layouts/main',
+        page: 'persyaratan-isbat-nikah',
+        title: 'Persyaratan Isbat Nikah - KUA Kec. Kepahiang'
     });
 });
 

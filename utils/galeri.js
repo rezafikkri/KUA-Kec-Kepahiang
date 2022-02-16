@@ -37,7 +37,7 @@ async function getInstagramImages(limit, url)
 
     // if empty url
     if (!url) {
-        url = `https://graph.instagram.com/me/media?fields=caption,media_url&edges=children&access_token=${accessTokens.access_token}&limit=${limit}`;
+        url = `https://graph.instagram.com/me/media?fields=caption,media_url&access_token=${accessTokens.access_token}&limit=${limit}`;
     }
     
     // get images

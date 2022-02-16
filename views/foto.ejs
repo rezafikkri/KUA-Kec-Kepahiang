@@ -19,14 +19,19 @@
             <% }); %>
         </div><!-- galeri-grid -->
 
-        <% if (nextPageUrl) { %>
-            <div class="btn-loading">
-                <a href="#" class="btn btn-green" data-next-page-url="<%= nextPageUrl %>" id="show-next-images">Lihat Lebih Banyak Foto</a>
-                <div class="loading d-none" id="loading"><div></div></div>
-            </div>
-        <% } else { %>
+        <% if (!nextPageUrl) { %>
             <p class="text-muted">Foto sudah habis.</p>
         <% } %>
+        <div class="btn-loading">
+            <% if (nextPageUrl) { %>
+                <a href="#" class="btn btn-green" data-next-page-url="<%= nextPageUrl %>" id="show-next-images">
+            <% } else { %>
+                <a href="#" class="btn btn-green disabled" id="show-next-images">
+            <% } %>
+                Lihat Lebih Banyak Foto
+            </a>
+            <div class="loading d-none" id="loading"><div></div></div>
+        </div>
     </div><!-- galeri -->
     </div><!-- container -->
 </main>
