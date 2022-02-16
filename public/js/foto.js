@@ -43,22 +43,22 @@ document.querySelector('a#show-next-images').addEventListener('click', async (e)
     imagesLoaded(grid, () => {
         // add and lay out newly appended elements
         msnry.appended(elems);
-    });
 
-    // if next page url not undefined
-    if (responseJson.nextPageUrl) {
-        // replace next page url in button
-        e.target.dataset.nextPageUrl = responseJson.nextPageUrl;
-    } else {
-        // disabled button show next images
-        e.target.classList.add('disabled');
-        // show message
-        const messageElement = document.createElement('p');
-        messageElement.classList.add('text-muted');
-        messageElement.innerText = 'Foto sudah habis.';
-        e.target.parentElement.parentElement.insertBefore(messageElement, e.target.parentElement);
-    }
+        // if next page url not undefined
+        if (responseJson.nextPageUrl) {
+            // replace next page url in button
+            e.target.dataset.nextPageUrl = responseJson.nextPageUrl;
+        } else {
+            // disabled button show next images
+            e.target.classList.add('disabled');
+            // show message
+            const messageElement = document.createElement('p');
+            messageElement.classList.add('text-muted');
+            messageElement.innerText = 'Foto sudah habis.';
+            e.target.parentElement.parentElement.insertBefore(messageElement, e.target.parentElement);
+        }
     
-    // hide loading
-    loadingElement.classList.add('d-none');
+        // hide loading
+        loadingElement.classList.add('d-none');
+    });
 });
