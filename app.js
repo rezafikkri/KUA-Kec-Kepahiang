@@ -30,7 +30,7 @@ app.get('/', async (req, res) => {
         layout: 'layouts/main',
         page: 'beranda',
         title: 'Kantor Urusan Agama Kecamatan Kepahiang',
-        description: 'Kantor Urusan Agama Kecamatan Kepahiang',
+        description: 'Jln. Lintas  Kepahiang Curup Komplek Perkantoran Kelobak Kepahiang 39172',
         images,
         videos
     });
