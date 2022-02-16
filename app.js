@@ -30,6 +30,7 @@ app.get('/', async (req, res) => {
         layout: 'layouts/main',
         page: 'beranda',
         title: 'Kantor Urusan Agama Kecamatan Kepahiang',
+        description: 'Kantor Urusan Agama Kecamatan Kepahiang',
         images,
         videos
     });
@@ -42,6 +43,7 @@ app.get('/foto', async (req, res) => {
         layout: 'layouts/main',
         page: 'foto',
         title: 'Foto - KUA Kec. Kepahiang',
+        description: 'Foto dokumentasi kegiatan',
         images,
         nextPageUrl
     });
@@ -60,6 +62,7 @@ app.get('/video', async (req, res) => {
         layout: 'layouts/main',
         page: 'video',
         title: 'Video - KUA Kec. Kepahiang',
+        description: 'Video dokumentasi kegiatan dan informasi',
         videos,
         nextPageToken
     });
@@ -75,7 +78,8 @@ app.get('/sejarah', (req, res) => {
     res.render('sejarah', {
         layout: 'layouts/main',
         page: 'sejarah',
-        title: 'Sejarah - KUA Kec. Kepahiang'
+        title: 'Sejarah - KUA Kec. Kepahiang',
+        description: 'Sejarah Kantor Urusan Agama Kecamatan Kepahiang'
     });
 });
 
@@ -83,7 +87,8 @@ app.get('/visi-misi', (req, res) => {
     res.render('visi_misi', {
         layout: 'layouts/main',
         page: 'visi-misi',
-        title: 'Visi Misi - KUA Kec. Kepahiang'
+        title: 'Visi Misi - KUA Kec. Kepahiang',
+        description: 'Visi dan misi Kantor Urusan Agama Kecamatan Kepahiang'
     });
 });
 
@@ -91,7 +96,8 @@ app.get('/struktur-organisasi', (req, res) => {
     res.render('struktur_organisasi', {
         layout: 'layouts/main',
         page: 'struktur-organisasi',
-        title: 'Struktur Organisasi - KUA Kec. Kepahiang'
+        title: 'Struktur Organisasi - KUA Kec. Kepahiang',
+        description: 'Struktur organisasi Kantor Urusan Agama Kecamatan Kepahiang'
     });
 });
 
@@ -99,7 +105,8 @@ app.get('/persyaratan-nikah', (req, res) => {
     res.render('persyaratan_nikah', {
         layout: 'layouts/main',
         page: 'persyaratan-nikah',
-        title: 'Persyaratan Nikah - KUA Kec. Kepahiang'
+        title: 'Persyaratan Nikah - KUA Kec. Kepahiang', 
+        description: 'Berkas-berkas persyaratan nikah'
     });
 });
 
@@ -107,7 +114,8 @@ app.get('/standar-pelayanan-minimal', (req, res) => {
     res.render('standar_pelayanan_minimal', {
         layout: 'layouts/main',
         page: 'standar-pelayanan-minimal',
-        title: 'Standar Pelayanan Minimal - KUA Kec. Kepahiang'
+        title: 'Standar Pelayanan Minimal - KUA Kec. Kepahiang',
+        description: 'Standar pelayanan minimal Kantor Urusan Agama Kecamatan Kepahiang'
     });
 });
 
@@ -115,7 +123,8 @@ app.get('/persyaratan-rekomendasi-nikah', (req, res) => {
     res.render('persyaratan_rekomendasi_nikah', {
         layout: 'layouts/main',
         page: 'persyaratan-rekomendasi-nikah',
-        title: 'Persyaratan Rekomendasi Nikah - KUA Kec. Kepahiang'
+        title: 'Persyaratan Rekomendasi Nikah - KUA Kec. Kepahiang',
+        description: 'Berkas-berkas untuk membuat rekomendasi nikah'
     });
 });
 
@@ -123,7 +132,8 @@ app.get('/persyaratan-duplikat-buku-nikah', (req, res) => {
     res.render('persyaratan_duplikat_buku_nikah', {
         layout: 'layouts/main',
         page: 'persyaratan-duplikat-buku-nikah',
-        title: 'Persyaratan Duplikat Buku Nikah - KUA Kec. Kepahiang'
+        title: 'Persyaratan Duplikat Buku Nikah - KUA Kec. Kepahiang',
+        description: 'Berkas-berkas untuk membuat duplikat buku nikah'
     });
 });
 
@@ -131,7 +141,8 @@ app.get('/persyaratan-isbat-nikah', (req, res) => {
     res.render('persyaratan_isbat_nikah', {
         layout: 'layouts/main',
         page: 'persyaratan-isbat-nikah',
-        title: 'Persyaratan Isbat Nikah - KUA Kec. Kepahiang'
+        title: 'Persyaratan Isbat Nikah - KUA Kec. Kepahiang',
+        description: 'Berkas-berkas untuk isbat nikah'
     });
 });
 

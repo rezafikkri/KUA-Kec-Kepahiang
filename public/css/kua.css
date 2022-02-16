@@ -1,21 +1,4 @@
-@font-face {
-    font-family: 'WorkSans Regular';
-    src: url('/font/Work-Sans/WorkSans-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'WorkSans Medium';
-    src: url('/font/Work-Sans/WorkSans-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'WorkSans Semi Bold';
-    src: url('/font/Work-Sans/WorkSans-SemiBold.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
 
 /* common */
 :root {
@@ -35,7 +18,8 @@
 }
 
 footer {
-    font-family: 'WorkSans Regular';
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400;
     background-color: #f1f1f1;
     color: #aaa;
 }
@@ -47,11 +31,13 @@ header {
 }
 
 header h1 {
-    font-family: 'WorkSans Semi Bold';
+    font-family: 'Work Sans', sans-serif; /* semi bold */
+    font-weight: 600;
 }
 
 header h5 {
-    font-family: 'WorkSans Regular';
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400;
 }
 
 .dropdown-menu {
@@ -86,12 +72,14 @@ header h5 {
 
 /* navbar */
 .navbar {
-    font-family: 'WorkSans Regular';
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400;
 }
 
 .navbar .navbar-brand,
 .nav-link.active {
-    font-family: 'WorkSans Medium';
+    font-family: 'Work Sans', sans-serif; /* medium */
+    font-weight: 500;
 }
 
 .navbar.bg-green {
@@ -109,12 +97,14 @@ header h5 {
 .layanan h1,
 .ringkasan-galeri h1,
 .layanan h3 {
-    font-family: 'WorkSans Medium';
+    font-family: 'Work Sans', sans-serif; /* medium */
+    font-weight: 500;
 }
 
 .layanan h5,
 .ringkasan-galeri h5 {
-    font-family: 'WorkSans Regular';
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400;
 }
 
 .ringkasan-galeri {
@@ -168,7 +158,8 @@ header h5 {
 }
 
 .detail-galeri h5 {
-    font-family: 'WorkSans Regular'; 
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400; 
 }
 
 .kode-etik {
@@ -183,14 +174,16 @@ header h5 {
     left: 0;
     color: #ddd;
     z-index: 1;
-    font-family: 'WorkSans Semi Bold';
+    font-family: 'Work Sans', sans-serif; /* semi bold */
+    font-weight: 600;
     font-size: 4rem;
 }
 
 .kode-etik .col-12.col-md-6 h4 {
     position: relative;
     z-index: 2;
-    font-family: 'WorkSans Regular'; 
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400; 
     padding-left: 10px;
 }
 
@@ -209,11 +202,13 @@ header h5 {
 }
 
 .galeri h1 {
-    font-family: 'WorkSans Semi Bold';
+    font-family: 'Work Sans', sans-serif; /* semi bold */
+    font-weight: 600;
 }
 
 .galeri h5 {
-    font-family: 'WorkSans Regular';
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400;
 }
 
 .galeri:after {
@@ -257,7 +252,8 @@ header h5 {
 }
 
 .visi-misi {
-    font-family: 'WorkSans Regular';
+    font-family: 'Work Sans', sans-serif; /* regular */
+    font-weight: 400;
 }
 
 .visi-misi h5 {
