@@ -1,3 +1,4 @@
+const compression = require('compression');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const {
@@ -7,6 +8,8 @@ const {
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(compression());
 
 // force https in production
 app.use((request, response, next) => {
