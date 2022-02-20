@@ -41,11 +41,8 @@ async function showYoutubeVideos(videoElement)
     videoElement.innerHTML = elems;
 }
 
-// load foto and video after page has loaded
-window.addEventListener('load', () => {
-    const fotoElement = document.querySelector('#foto');
-    const videoElement = document.querySelector('#video');
+const fotoElement = document.querySelector('#foto');
+const videoElement = document.querySelector('#video');
 
-    showInstagramImages(fotoElement);
-    showYoutubeVideos(videoElement);
-});
+showInstagramImages(fotoElement);
+showYoutubeVideos(videoElement);

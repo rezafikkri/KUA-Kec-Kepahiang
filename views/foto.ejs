@@ -8,30 +8,8 @@
     <div class="container">
     <div class="galeri text-center">
         <div class="galeri-grid mb-5">
-            <div class="galeri-sizer"></div>
-            <% images.forEach((img) => { %>
-                <div class="galeri-item">
-                    <img src="<%= img.media_url %>" alt="<%= img.caption %>">
-                    <div class="detail-galeri position-absolute p-3">
-                        <h5><%= img.caption %></h5>
-                    </div>
-                </div>
-            <% }); %>
+            <div class="loading" id="loading"><div></div></div>
         </div><!-- galeri-grid -->
-
-        <% if (!nextPageUrl) { %>
-            <p class="text-muted">Foto sudah habis.</p>
-        <% } %>
-        <div class="btn-loading">
-            <% if (nextPageUrl) { %>
-                <a href="#" class="btn btn-green" data-next-page-url="<%= nextPageUrl %>" id="show-next-images">
-            <% } else { %>
-                <a href="#" class="btn btn-green disabled" id="show-next-images">
-            <% } %>
-                Lihat Lebih Banyak Foto
-            </a>
-            <div class="loading d-none" id="loading"><div></div></div>
-        </div>
     </div><!-- galeri -->
     </div><!-- container -->
 </main>
