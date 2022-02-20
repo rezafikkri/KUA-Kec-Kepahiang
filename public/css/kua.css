@@ -120,6 +120,7 @@ header h5 {
 .ringkasan-galeri .row {
     padding-left: 12px;
     padding-right: 12px;
+    min-height: 200px;
 }
 
 .ringkasan-galeri .btn {

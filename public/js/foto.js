@@ -18,7 +18,7 @@ document.querySelector('a#show-next-images').addEventListener('click', async (e)
     loadingElement.classList.remove('d-none');
     
     const nextPageUrl = encodeURIComponent(e.target.dataset.nextPageUrl);
-    const response = await fetch(`foto/show-next-images?nextPageUrl=${nextPageUrl}`);
+    const response = await fetch(`foto/gets?nextPageUrl=${nextPageUrl}`);
     const responseJson = await response.json();
 
     const galeriGridElement = document.querySelector('.galeri-grid');

@@ -25,54 +25,41 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.use(express.static('public'));
 
-app.get('/', async (req, res) => {
-    const { images } = await getInstagramImages(2);
-    const { items: videos } = await getYoutubeVideos(2);
-
+app.get('/', (req, res) => {
     res.render('index', {
         layout: 'layouts/main',
         page: 'beranda',
         title: 'Kantor Urusan Agama Kecamatan Kepahiang',
-        description: 'Jln. Lintas  Kepahiang Curup Komplek Perkantoran Kelobak Kepahiang 39172',
-        images,
-        videos
+        description: 'Jln. Lintas  Kepahiang Curup Komplek Perkantoran Kelobak Kepahiang 39172'
     });
 });
 
-app.get('/foto', async (req, res) => {
-    const { images, nextPageUrl } = await getInstagramImages(10);
-
+app.get('/foto', (req, res) => {
     res.render('foto', {
         layout: 'layouts/main',
         page: 'foto',
         title: 'Foto - KUA Kec. Kepahiang',
-        description: 'Foto dokumentasi kegiatan',
-        images,
-        nextPageUrl
+        description: 'Foto dokumentasi kegiatan'
     });
 });
 
-app.get('/foto/show-next-images', async (req, res) => {
-    const { images, nextPageUrl } = await getInstagramImages(10, req.query.nextPageUrl);
+app.get('/foto/gets', async (req, res) => {
+    const { images, nextPageUrl } = await getInstagramImages(req.query.limit, req.query.nextPageUrl);
 
     res.json({ images, nextPageUrl });
 });
 
-app.get('/video', async (req, res) => {
-    const { items: videos, nextPageToken } = await getYoutubeVideos(10);
-
+app.get('/video', (req, res) => {
     res.render('video', {
         layout: 'layouts/main',
         page: 'video',
         title: 'Video - KUA Kec. Kepahiang',
-        description: 'Video dokumentasi kegiatan dan informasi',
-        videos,
-        nextPageToken
+        description: 'Video dokumentasi kegiatan dan informasi'
     });
 });
 
-app.get('/video/show-next-videos', async (req, res) => {
-    const { items: videos, nextPageToken } = await getYoutubeVideos(10, req.query.nextPageToken);
+app.get('/video/gets', async (req, res) => {
+    const { items: videos, nextPageToken } = await getYoutubeVideos(req.query.limit, req.query.nextPageToken);
 
     res.json({ videos, nextPageToken });
 });

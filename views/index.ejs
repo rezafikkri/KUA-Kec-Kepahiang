@@ -22,31 +22,12 @@
     <div class="container">
     <h1 class="mb-0">Galeri Foto & Video</h1>
     <h5 class="mb-4">Dokumentasi kegiatan</h5>
-    <div class="row mb-2">
-        <% for (let i = 0; i < 2; i++) { %>
-        <div class="col-12 col-md-5 position-relative p-0">
-            <img src="<%= images[i].media_url %>" alt="<%= images[i].caption %>">
-            <div class="detail-galeri position-absolute p-3">
-                <h5><%= images[i].caption %></h5>
-            </div>
-        </div>
-        <% } %>
-        <div class="col-12 col-md-2 position-relative p-0 ">
-            <a href="/foto" class="btn btn-green rounded-0">Lihat Lebih Banyak Foto</a>
-        </div>
+    <div class="row mb-2" id="foto">
+        <div class="loading" id="foto-loading"><div></div></div>
     </div>
 
-    <div class="row">
-        <% videos.forEach((video) => { %>
-            <div class="col-12 col-md-5 position-relative p-0">
-                <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/<%= video.id.videoId %>" title="YouTube video player" allowfullscreen></iframe>
-                </div>
-            </div>
-        <% }); %>
-        <div class="col-12 col-md-2 position-relative p-0">
-            <a href="/video" class="btn btn-green rounded-0">Lihat Lebih Banyak Video</a>
-        </div>
+    <div class="row" id="video">
+        <div class="loading" id="video-loading"><div></div></div>
     </div>
     </div><!-- container -->
 </div><!-- ringkasan-galeri -->
@@ -82,3 +63,6 @@
     </div><!-- container -->
 </div>
 </main>
+
+<%- contentFor('js') %>
+<script src="js/index.js"></script>
