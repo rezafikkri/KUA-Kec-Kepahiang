@@ -67,7 +67,7 @@ galeriElement.addEventListener('click', async (e) => {
         loadingElement.classList.remove('d-none');
 
         const nextPageUrl = encodeURIComponent(e.target.dataset.nextPageUrl);
-        const response = await fetch(`foto/gets?nextPageUrl=${nextPageUrl}`);
+        const response = await fetch(`foto/gets?limit=20&nextPageUrl=${nextPageUrl}`);
         const responseJson = await response.json();
 
         let elems = [];

@@ -9,24 +9,9 @@
     <div class="galeri text-center">
         <div class="galeri-grid mb-5">
         <div class="row m-0">
-            <% videos.forEach((video) => { %>
-                <div class="col-12 col-md-6 position-relative p-0">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/<%= video.id.videoId %>" title="YouTube video player" allowfullscreen></iframe>
-                    </div>
-                </div>
-            <% }); %>
+            <div class="loading p-0" id="loading"><div></div></div>
         </div>
         </div><!-- galeri-grid -->
-        
-        <% if (nextPageToken) { %>
-            <div class="btn-loading">
-                <a href="#" class="btn btn-green" data-next-page-token="<%= nextPageToken %>" id="show-next-videos">Lihat Lebih Banyak Video</a>
-                <div class="loading d-none" id="loading"><div></div></div>
-            </div>
-        <% } else { %>
-            <p class="text-muted">Video sudah habis.</p>
-        <% } %>
     </div><!-- galeri -->
     </div><!-- container -->
 </main>
