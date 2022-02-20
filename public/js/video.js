@@ -41,6 +41,8 @@ async function showYoutubeVideos(galeriElement, galeriGridElement)
         conBtnLoadingElement.innerHTML = bodyBtnLoadingElement;
         galeriElement.appendChild(conBtnLoadingElement);
     } catch (error) {
+        // remove loading
+        document.querySelector('#loading').remove();
         console.error(error);
     }
 }
