@@ -1,6 +1,3 @@
-const fotoElement = document.querySelector('#foto');
-const videoElement = document.querySelector('#video');
-
 async function showInstagramImages(fotoElement)
 {
     const response = await fetch(`foto/gets?limit=2`);
@@ -44,8 +41,11 @@ async function showYoutubeVideos(videoElement)
     videoElement.innerHTML = elems;
 }
 
-showInstagramImages(fotoElement);
-
+// load foto and video after page has loaded
 window.addEventListener('load', () => {
+    const fotoElement = document.querySelector('#foto');
+    const videoElement = document.querySelector('#video');
+
+    showInstagramImages(fotoElement);
     showYoutubeVideos(videoElement);
 });
