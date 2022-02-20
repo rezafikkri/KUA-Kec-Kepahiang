@@ -45,4 +45,7 @@ async function showYoutubeVideos(videoElement)
 }
 
 showInstagramImages(fotoElement);
-showYoutubeVideos(videoElement);
+
+window.addEventListener('load', () => {
+    showYoutubeVideos(videoElement);
+});
