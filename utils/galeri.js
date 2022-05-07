@@ -26,8 +26,8 @@ async function getInstagramImages(limit, url)
     const currentDate = `${currentDateObj.getFullYear()}-${currentDateObj.getMonth()}-${currentDateObj.getDate()}`;
     const expireDateObj = new Date(accessTokens.created_at + (accessTokens.expires_in * 1000));
     const expireDate = `${expireDateObj.getFullYear()}-${expireDateObj.getMonth()}-${expireDateObj.getDate()}`;
-    // if session expired
-    if (currentDate == expireDate) {
+    // if token expired
+    if (currentDate >= expireDate) {
         const accessTokensNew = await refreshInstagramAccessTokens(accessTokens.access_token);
         accessTokensNew.created_at = Date.now();
         // update access tokens
